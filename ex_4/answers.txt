@@ -1,0 +1,12 @@
+Ex_2:
+MySQL: exec sp_columns FactInternetSales;
+PostgreSQL: \d  FactInternetSales;
+Oracle: DESCRIBE FactInternetSales;
+
+Ex_7b:
+Dane w tabeli można łączyć na następujące sposoby:
+a) INNER JOIN  - to część wspólna łączonych tabel 
+b) left outer join - łączymy wszystkie elementy tabeli po lewej stronie z elementem wspólnym drugiej tabeli
+c) right outer join - łączymy wszystkie elementy tabeli po prawej stronie z elementem wspólnym drugiej tabeli
+d) full outer join - łączymy wszystkie elementy łączonych tabel
+e) cross join - łączy każdy element tabeli nr 1 z każdym elementem tabeli nr 2
