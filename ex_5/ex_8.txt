@@ -1,0 +1,15 @@
+Ex_8
+a) 
+SELECT OrderDate, COUNT(OrderDate) as order_cnt from AdventureWorksDW2019.dbo.FactInternetSales 
+GROUP BY(OrderDate)
+HAVING COUNT(OrderDate) < 100
+ORDER BY order_cnt DESC;
+
+b)
+SELECT OrderDate,EnglishProductName FROM
+(SELECT OrderDate, AdventureWorksDW2019.dbo.DimProduct.EnglishProductName,
+COUNT(OrderDate) OVER(PARTITION BY OrderDate) as order_cnt, ROW_NUMBER() 
+OVER(PARTITION BY OrderDate ORDER BY UnitPrice DESC) row_num,UnitPrice
+FROM AdventureWorksDW2019.dbo.FactInternetSales
+JOIN AdventureWorksDW2019.dbo.DimProduct ON DimProduct.ProductKey=FactInternetSales.ProductKey) t2
+WHERE row_num <=3 ORDER BY order_cnt DESC;
