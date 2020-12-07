@@ -1,0 +1,7 @@
+Zad6.
+FirstName - typ 0
+LastName - typ 1
+Title - typ 2
+  
+Zad7.
+Ustawienie "Fail the transformation if changes are detected in a fixed attribute" wpływa na działanie procesu w przypadku kwerendy z zadania 5c. 
