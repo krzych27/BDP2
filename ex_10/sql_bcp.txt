@@ -1,0 +1,12 @@
+SQL:
+
+Use AdventureWorksDW2019;
+CREATE TABLE CUSTOMERS_290936(ProductKey INTEGER, CurrencyAlternateKey VARCHAR(40), FIRST_NAME VARCHAR(80),LAST_NAME VARCHAR(80), OrderDateKey VARCHAR(20),
+OrderQuantity VARCHAR(40),UnitPrice FLOAT,SecretCode VARCHAR (40) );
+
+
+BCP:
+
+bcp  AdventureWorksDW2019.dbo.CUSTOMERS_290936 format nul -c -T -t, -f C:\Users\ks270\OneDrive\Desktop\result.fmt
+
+bcp AdventureWorksDW2019.dbo.CUSTOMERS_290936 in C:\Users\ks270\OneDrive\Desktop\bazy\customers.csv -f C:\Users\ks270\OneDrive\Desktop\bazy\result.fmt -T
